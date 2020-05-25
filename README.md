@@ -26,11 +26,11 @@ The goal of this project is to develop the official Corona-Warn-App for Germany 
 [![coverage](https://sonarcloud.io/api/project_badges/measure?project=corona-warn-app_cwa-verification-server&metric=coverage)](https://sonarcloud.io/dashboard?id=corona-warn-app_cwa-verification-server)
 [![bugs](https://sonarcloud.io/api/project_badges/measure?project=corona-warn-app_cwa-verification-server&metric=bugs)](https://sonarcloud.io/dashboard?id=corona-warn-app_cwa-verification-server)
 
-## Architecture Overview
+## Architecture overview
 You can find an architectural overview of the component in the [solution architecture document](https://github.com/corona-warn-app/cwa-documentation/blob/master/solution_architecture.md).  
-This component of the Corona-Warn-App whereas named **verification process** provides two functionalities:  
+This component of the Corona-Warn-App whereas named **verification process** provides indeed two functionalities:  
 1. prove that a pretended positive case is indeed positive  
-2. provide the result of a COVID-19 Test  
+2. provide the result of a COVID-19 test  
 
 To achieve this, the verification service gets the result of COVID-19 tests from LIS (**L**abor **I**nformation **S**ystem) which delivers test results to it. The complete process is described in [cwa-documentation/Solution Architecture](https://github.com/corona-warn-app/cwa-documentation/blob/master/solution_architecture.md) to which you may refer for detailed information about the workflow.
 
@@ -54,7 +54,7 @@ Whether you cloned or downloaded the 'zipped' sources you will either find the s
 In either case open a terminal pointing to the directory you put the sources in. The local build process is described afterwards depending on the way you choose.
  
 #### Maven based build
-This is the recommmended way for taking part in the development actively.  
+This is the recommmended way for taking part in the development.  
 Please check, whether following prerequisites are installed on your machine:
 - [Open JDK 11](https://openjdk.java.net) or a similar JDK 11 compatible VM  
 - [Maven](https://apache.maven.org)  
@@ -67,12 +67,9 @@ You can then open a terminal pointing to the root directory of the verification 
 The verification server will start up and run locally on your machine available on port 8080.
 
 #### Docker based build  
-We recommend that you first check the prerequisites to ensure that  
-- [Docker](https://www.docker.com)  
+We recommend that you first check to ensure that [Docker](https://www.docker.com) is installed on your machine.
 
-is installed on you machine  
-
-On the commandline do the following:
+On the command line do the following:
 ```bash
 docker build -f|--file <path to dockerfile>  -t <imagename>  <path-to-verificationserver-root>
 docker run -p 127.0.0.1:8080:8080/tcp -it <imagename>
